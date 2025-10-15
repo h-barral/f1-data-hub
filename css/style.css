@@ -59,6 +59,11 @@ nav {
   color: white;
 }
 
+/* Style pour le lien de la page active */
+.nav-links a.active {
+    color: rgb(142, 25, 25);
+}
+
 /* ======================= HERO SECTION ======================= */
 
 /* RÈGLE MANQUANTE RESTAURÉE */
@@ -373,4 +378,182 @@ footer {
         flex-direction: column;
         gap: 20px;
     }
+}
+
+/* ======================= PAGE COURSES ======================= */
+.page-header {
+    padding-top: 120px; /* Espace pour ne pas être sous la nav */
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 3.5rem;
+    color: white;
+}
+
+.schedule-grid {
+    display: grid;
+    /* Crée des colonnes responsives qui font au moins 350px */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    padding-bottom: 80px;
+}
+
+.race-card {
+    background-color: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.race-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.race-card-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.race-card-body {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.race-flag img {
+    height: 40px;
+    border-radius: 5px;
+}
+
+.race-details h3 {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+}
+
+.race-details p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 5px 0 0 0;
+}
+
+.race-card-status {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    text-align: right;
+}
+
+.status {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.status-completed {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.status-upcoming {
+    background-color: #E10600; /* Rouge F1 iconique */
+    color: white;
+}
+
+
+/* ======================= PAGE PILOTES ======================= */
+.pilots-grid {
+    display: grid;
+    /* Crée des colonnes responsives qui font au moins 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding-bottom: 80px;
+}
+
+.pilot-card {
+    background: linear-gradient(180deg, #222 0%, #111 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden; /* Important pour l'effet de couleur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pilot-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* La barre de couleur de l'écurie */
+.pilot-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--team-color); /* On utilise notre variable CSS ! */
+}
+
+.pilot-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pilot-number {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.pilot-flag {
+    height: 20px;
+}
+
+.pilot-image {
+    height: 250px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pilot-image img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    /* Effet pour que l'image se détache du fond */
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+}
+
+.pilot-info {
+    text-align: center;
+}
+
+.pilot-info h3 {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.8rem;
+    color: white;
+    margin: 0;
+}
+
+.pilot-info p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 5px 0 0 0;
 }

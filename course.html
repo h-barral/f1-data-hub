@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendrier des Courses - F1 Data Hub</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="./index.html" class="nav-logo">F1 HUB</a>
+        <ul class="nav-links">
+          <li><a href="./course.html" class="active">Courses</a></li>
+          <li><a href="#">Classements</a></li>
+          <li><a href="./pilotes.html">Pilotes</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero-section">
+      <video
+        id="hero-video"
+        src="./videos/hero-background.mp4"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1>F1 Data Hub</h1>
+        <p>L'expérience ultime pour le fan de Formule 1.</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-header">
+        <h1>Calendrier Officiel 2025</h1>
+      </div>
+
+      <div class="section-container">
+        <div class="schedule-grid">
+          <div class="race-card">
+            <div class="race-card-header">
+              <span class="round-number">Round 01</span>
+              <span class="race-date">02 Mars</span>
+            </div>
+            <div class="race-card-body">
+              <div class="race-flag">
+                <img
+                  src="./images/flags/bahrain.png"
+                  alt="Drapeau de Bahreïn"
+                />
+              </div>
+              <div class="race-details">
+                <h3>Grand Prix de Bahreïn</h3>
+                <p>Bahrain International Circuit</p>
+              </div>
+            </div>
+            <div class="race-card-status">
+              <span class="status status-completed">Terminé</span>
+            </div>
+          </div>
+
+          <div class="race-card">
+            <div class="race-card-header">
+              <span class="round-number">Round 02</span>
+              <span class="race-date">09 Mars</span>
+            </div>
+            <div class="race-card-body">
+              <div class="race-flag">
+                <img
+                  src="./images/flags/saudi-arabia.png"
+                  alt="Drapeau de l'Arabie Saoudite"
+                />
+              </div>
+              <div class="race-details">
+                <h3>Grand Prix d'Arabie Saoudite</h3>
+                <p>Jeddah Corniche Circuit</p>
+              </div>
+            </div>
+            <div class="race-card-status">
+              <span class="status status-completed">Terminé</span>
+            </div>
+          </div>
+
+          <div class="race-card">
+            <div class="race-card-header">
+              <span class="round-number">Round 03</span>
+              <span class="race-date">23 Mars</span>
+            </div>
+            <div class="race-card-body">
+              <div class="race-flag">
+                <img
+                  src="./images/flags/australia.png"
+                  alt="Drapeau de l'Australie"
+                />
+              </div>
+              <div class="race-details">
+                <h3>Grand Prix d'Australie</h3>
+                <p>Albert Park Circuit</p>
+              </div>
+            </div>
+            <div class="race-card-status">
+              <span class="status status-upcoming">À venir</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <p class="footer-copyright">
+          &copy; 2025 F1 Data Hub. Tous droits réservés.
+        </p>
+        <div class="footer-socials">
+          <a href="https://github.com/h-barral" target="_blank" title="GitHub">
+            <img src="./images/github-icon.svg" alt="GitHub" />
+          </a>
+          <a href="https://linkedin.com" target="_blank" title="LinkedIn">
+            <img src="./images/linkedin-icon.svg" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

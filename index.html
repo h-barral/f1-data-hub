@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F1 Data Hub</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">F1 HUB</a>
+        <ul class="nav-links">
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Classements</a></li>
+          <li><a href="#">Pilotes</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero-section">
+      <video
+        id="hero-video"
+        src="./videos/hero-background.mp4"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1>F1 Data Hub</h1>
+        <p>L'expérience ultime pour le fan de Formule 1.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="next-race-section">
+        <div class="section-container">
+          <div class="section-title">
+            <h2>Prochaine Course</h2>
+          </div>
+
+          <div class="race-info">
+            <h3>Grand Prix de Las Vegas</h3>
+            <div id="countdown">
+              <div class="countdown-block">
+                <span id="days">00</span>
+                <small>Jours</small>
+              </div>
+              <div class="countdown-block">
+                <span id="hours">00</span>
+                <small>Heures</small>
+              </div>
+              <div class="countdown-block">
+                <span id="minutes">00</span>
+                <small>Minutes</small>
+              </div>
+              <div class="countdown-block">
+                <span id="seconds">00</span>
+                <small>Secondes</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

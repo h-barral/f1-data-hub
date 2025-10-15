@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Titillium+Web:wght@700&display=swap');
+
+/* ======================= FONDATIONS ======================= */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+}
+
+/* ======================= NAVIGATION ======================= */
+nav {
+    position: fixed; /* Reste fixe en haut de l'écran */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* S'assure qu'elle est au-dessus du reste */
+    padding: 15px 0;
+    /* Effet de verre dépoli */
+    background-color: rgba(10, 10, 10, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Pour Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px; /* Définit la largeur max du contenu */
+    margin: 0 auto; /* Centre le conteneur */
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; /* Espace entre le logo et les liens */
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none; /* Enlève les puces */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px; /* Espace entre chaque lien */
+}
+
+.nav-links a {
+    font-family: 'Roboto', sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+
+/* ======================= HERO SECTION ======================= */
+
+/* RÈGLE MANQUANTE RESTAURÉE */
+.hero-section {
+    height: 100vh;
+    position: relative;
+    display: flex; /* <-- Centrage horizontal et vertical */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center; /* <-- Centrage du texte */
+    color: white;
+}
+
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+/* RÈGLES DUPLIQUÉES FUSIONNÉES */
+.hero-content h1 {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 5rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1s forwards;
+}
+
+/* ======================= ANIMATIONS ======================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======================= SECTIONS DE CONTENU ======================= */
+.next-race-section {
+    padding: 80px 0;
+    background-color: #111; /* Un gris très foncé, pour contraster avec le noir pur */
+    color: white;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Ligne de séparation subtile */
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title h2 {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0 30px 0; /* Espace en dessous du titre */
+}
+
+.race-info h3 {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+.race-info p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    margin: 10px 0 0 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Style pour le compte à rebours */
+#countdown {
+    display: flex;
+    gap: 20px; /* Espace entre les blocs */
+    margin-top: 30px;
+}
+
+.countdown-block {
+    text-align: center;
+    background-color: #0A0A0A; /* Un noir légèrement différent */
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 100px; /* Assure une largeur minimale */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.countdown-block span {
+    display: block;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.countdown-block small {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}

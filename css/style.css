@@ -1,335 +1,335 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Titillium+Web:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Titillium+Web:wght@700&display=swap');
 
 /* ======================= FONDATIONS ======================= */
 body {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  background-color: #000;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
 }
 
 /* ======================= NAVIGATION ======================= */
 nav {
-  position: fixed; /* Reste fixe en haut de l'écran */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10; /* S'assure qu'elle est au-dessus du reste */
-  padding: 15px 0;
-  /* Effet de verre dépoli */
-  background-color: rgba(10, 10, 10, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Pour Safari */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 15px 0;
+    background-color: rgba(10, 10, 10, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-container {
-  max-width: 1200px; /* Définit la largeur max du contenu */
-  margin: 0 auto; /* Centre le conteneur */
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between; /* Espace entre le logo et les liens */
-  align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-logo {
-  font-family: "Titillium Web", sans-serif;
-  font-size: 1.5rem;
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
 }
 
 .nav-links {
-  list-style: none; /* Enlève les puces */
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 40px; /* Espace entre chaque lien */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
 }
 
 .nav-links a {
-  font-family: "Roboto", sans-serif;
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  font-weight: 700;
-  transition: color 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: white;
+    color: white;
 }
 
-/* Style pour le lien de la page active */
 .nav-links a.active {
-    color: rgb(142, 25, 25);
+    color: white;
 }
 
 /* ======================= HERO SECTION ======================= */
-
-/* RÈGLE MANQUANTE RESTAURÉE */
 .hero-section {
-  height: 100vh;
-  position: relative;
-  display: flex; /* <-- Centrage horizontal et vertical */
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  text-align: center; /* <-- Centrage du texte */
-  color: white;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    color: white;
 }
 
 #hero-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1;
-  object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
 }
 
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  opacity: 0;
-  animation: fadeIn 1s ease-out 0.5s forwards;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
 }
 
-/* RÈGLES DUPLIQUÉES FUSIONNÉES */
 .hero-content h1 {
-  font-family: "Titillium Web", sans-serif;
-  font-size: 5rem;
-  margin: 0;
-  letter-spacing: 2px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 5rem;
+    margin: 0;
+    letter-spacing: 2px;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  opacity: 0;
-  animation: fadeIn 1s ease-out 1s forwards;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1s forwards;
 }
 
 /* ======================= ANIMATIONS ======================= */
 @keyframes fadeIn {
-  from {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden-on-load {
     opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.visible {
     opacity: 1;
     transform: translateY(0);
-  }
 }
 
 /* ======================= SECTIONS DE CONTENU ======================= */
 .next-race-section {
-  padding: 80px 0;
-  background-color: #111; /* Un gris très foncé, pour contraster avec le noir pur */
-  color: white;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Ligne de séparation subtile */
+    padding: 80px 0;
+    background-color: #111;
+    color: white;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .section-title h2 {
-  font-family: "Titillium Web", sans-serif;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.5);
-  margin: 0 0 30px 0; /* Espace en dessous du titre */
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0 30px 0;
 }
 
 .race-info h3 {
-  font-family: "Titillium Web", sans-serif;
-  font-size: 3.5rem;
-  margin: 0;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 3.5rem;
+    margin: 0;
 }
 
 .race-info p {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.2rem;
-  margin: 10px 0 0 0;
-  color: rgba(255, 255, 255, 0.7);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    margin: 10px 0 0 0;
+    color: rgba(255, 255, 255, 0.7);
 }
 
-/* Style pour le compte à rebours */
 #countdown {
-  display: flex;
-  gap: 20px; /* Espace entre les blocs */
-  margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
 }
 
 .countdown-block {
-  text-align: center;
-  background-color: #0a0a0a; /* Un noir légèrement différent */
-  padding: 20px;
-  border-radius: 10px;
-  min-width: 100px; /* Assure une largeur minimale */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    background-color: #0A0A0A;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .countdown-block span {
-  display: block;
-  font-family: "Titillium Web", sans-serif;
-  font-size: 3rem;
-  font-weight: 700;
+    display: block;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
 }
 
 .countdown-block small {
-  font-family: "Roboto", sans-serif;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 /* ======================= CLASSEMENTS ======================= */
 .standings-section {
-  padding: 80px 0;
-  background-color: #0a0a0a; /* On garde un fond très sombre */
-  color: white;
+    padding: 80px 0;
+    background-color: #0A0A0A;
+    color: white;
 }
 
 .standings-grid {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px; /* Espace entre les deux colonnes */
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 .standings-column {
-  flex: 1; /* Chaque colonne prend une part égale de l'espace */
+    flex: 1;
 }
 
 .standings-column h4 {
-  font-family: "Titillium Web", sans-serif;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 15px;
-  margin-bottom: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .standings-column ol {
-  list-style: none; /* Enlève les numéros par défaut */
-  counter-reset: standings-counter; /* Initialise notre propre compteur */
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    counter-reset: standings-counter;
+    padding: 0;
+    margin: 0;
 }
 
 .standings-column li {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 1.1rem;
-  counter-increment: standings-counter; /* Incrémente notre compteur */
-  transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.1rem;
+    counter-increment: standings-counter;
+    transition: background-color 0.3s ease;
 }
 
 .standings-column li:hover {
-  background-color: #1a1a1a;
+    background-color: #1a1a1a;
 }
 
-/* On ajoute notre propre numéro stylisé */
 .standings-column li::before {
-  content: counter(standings-counter);
-  font-weight: 700;
-  min-width: 30px; /* Aligne bien les numéros */
+    content: counter(standings-counter);
+    font-weight: 700;
+    min-width: 30px;
 }
 
 .standings-column li span:last-child {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 /* ======================= PILOTES ======================= */
 .drivers-section {
-  padding: 80px 0;
-  background-color: #111;
-  color: white;
+    padding: 80px 0;
+    background-color: #111;
+    color: white;
 }
 
 .drivers-grid {
-  display: grid;
-  grid-template-columns: repeat(
-    3,
-    1fr
-  ); /* Crée une grille de 3 colonnes égales */
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 .driver-card {
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden; /* Cache les parties de l'image qui dépassent */
-  cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .driver-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .card-background img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* S'assure que l'image remplit la carte */
-  opacity: 0.3;
-  transition: opacity 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
 }
 
 .driver-card:hover .card-background img {
-  opacity: 0.6;
+    opacity: 0.6;
 }
 
 .card-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
 }
 
 .driver-number {
-  font-family: "Titillium Web", sans-serif;
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 1;
-  color: rgba(255, 255, 255, 0.5);
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .card-content h3 {
-  font-family: "Titillium Web", sans-serif;
-  font-size: 2rem;
-  margin: 5px 0;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 2rem;
+    margin: 5px 0;
 }
 
 .card-content small {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
 }
-
 
 /* ======================= FOOTER ======================= */
 footer {
@@ -368,11 +368,10 @@ footer {
 }
 
 .footer-socials img {
-    height: 24px; /* Ajuste la taille de vos icônes SVG */
+    height: 24px;
     width: 24px;
 }
 
-/* Pour les écrans mobiles, on empile les éléments */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
@@ -380,9 +379,9 @@ footer {
     }
 }
 
-/* ======================= PAGE COURSES ======================= */
+/* ======================= STYLE GÉNÉRIQUE POUR LES PAGES ======================= */
 .page-header {
-    padding-top: 120px; /* Espace pour ne pas être sous la nav */
+    padding-top: 120px;
     padding-bottom: 40px;
     text-align: center;
 }
@@ -393,9 +392,9 @@ footer {
     color: white;
 }
 
+/* ======================= PAGE COURSES ======================= */
 .schedule-grid {
     display: grid;
-    /* Crée des colonnes responsives qui font au moins 350px */
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
     padding-bottom: 80px;
@@ -468,15 +467,13 @@ footer {
 }
 
 .status-upcoming {
-    background-color: #E10600; /* Rouge F1 iconique */
+    background-color: #E10600;
     color: white;
 }
-
 
 /* ======================= PAGE PILOTES ======================= */
 .pilots-grid {
     display: grid;
-    /* Crée des colonnes responsives qui font au moins 280px */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
     padding-bottom: 80px;
@@ -488,7 +485,7 @@ footer {
     border-radius: 15px;
     padding: 20px;
     position: relative;
-    overflow: hidden; /* Important pour l'effet de couleur */
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -497,7 +494,6 @@ footer {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* La barre de couleur de l'écurie */
 .pilot-card::before {
     content: '';
     position: absolute;
@@ -505,7 +501,7 @@ footer {
     left: 0;
     width: 100%;
     height: 5px;
-    background-color: var(--team-color); /* On utilise notre variable CSS ! */
+    background-color: var(--team-color);
 }
 
 .pilot-card-header {
@@ -530,14 +526,13 @@ footer {
     margin: 10px 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .pilot-image img {
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
-    /* Effet pour que l'image se détache du fond */
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
 }
 
@@ -558,10 +553,9 @@ footer {
     margin: 5px 0 0 0;
 }
 
-
 /* ======================= PAGE CLASSEMENTS ======================= */
 .standings-table-container {
-    margin-bottom: 60px; /* Espace entre les deux tableaux */
+    margin-bottom: 60px;
 }
 
 .standings-table-container h2 {
@@ -573,7 +567,7 @@ footer {
 
 .standings-table {
     width: 100%;
-    border-collapse: collapse; /* Pour des bordures nettes */
+    border-collapse: collapse;
     color: white;
 }
 
@@ -596,7 +590,6 @@ footer {
 
 .standings-table tbody tr {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    /* La ligne de couleur de l'écurie ! */
     border-left: 5px solid var(--team-color);
     transition: background-color 0.3s ease;
 }
@@ -609,7 +602,6 @@ footer {
     font-size: 1.1rem;
 }
 
-/* On met les points en gras */
 .standings-table td:last-child {
     font-weight: 700;
 }

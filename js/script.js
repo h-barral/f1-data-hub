@@ -122,4 +122,90 @@ document.addEventListener('DOMContentLoaded', () => {
 
         generateGridView(); // Affiche la grille par défaut
     }
+
+
+    // ======================= COMPARATEUR DE PILOTES =======================
+// On s'assure que ce code ne s'exécute que sur la page du comparateur
+if (document.getElementById('comparison-container')) {
+    const pilote1Select = document.getElementById('pilote1-select');
+    const pilote2Select = document.getElementById('pilote2-select');
+    const resultsContainer = document.getElementById('comparison-results');
+    let allPilotesData = []; // Pour stocker les données de tous les pilotes
+
+    // 1. Aller chercher les données de tous les pilotes via notre API PHP
+    fetch('./api/get_pilotes.php')
+        .then(response => response.json())
+        .then(data => {
+            allPilotesData = data;
+            populateSelects(data);
+        });
+
+    // 2. Remplir les menus déroulants
+    function populateSelects(pilotes) {
+        pilotes.forEach(pilote => {
+            const option1 = new Option(pilote.nom_complet, pilote.id);
+            const option2 = new Option(pilote.nom_complet, pilote.id);
+            pilote1Select.add(option1);
+            pilote2Select.add(option2);
+        });
+    }
+
+    // 3. Écouter les changements sur les menus
+    pilote1Select.addEventListener('change', comparePilotes);
+    pilote2Select.addEventListener('change', comparePilotes);
+
+    // 4. Fonction principale de comparaison
+    function comparePilotes() {
+        const id1 = pilote1Select.value;
+        const id2 = pilote2Select.value;
+
+        // Si les deux pilotes sont sélectionnés
+        if (id1 && id2) {
+            const pilote1 = allPilotesData.find(p => p.id == id1);
+            const pilote2 = allPilotesData.find(p => p.id == id2);
+            displayResults(pilote1, pilote2);
+        }
+    }
+
+    // 5. Afficher les résultats
+    // 5. Afficher les résultats (VERSION AMÉLIORÉE)
+    function displayResults(p1, p2) {
+        // Un tableau des statistiques que nous voulons comparer
+        const statsToCompare = [
+            { key: 'victoires', label: 'Victoires' },
+            { key: 'podiums', label: 'Podiums' },
+            { key: 'poles', label: 'Pôles' },
+            { key: 'championnats_monde', label: 'Titres Mondiaux' }
+        ];
+
+        let html = `<h2>${p1.nom_complet} <span class="vs-text-small">vs</span> ${p2.nom_complet}</h2>`;
+
+        statsToCompare.forEach(stat => {
+            const val1 = parseInt(p1[stat.key]);
+            const val2 = parseInt(p2[stat.key]);
+            const total = val1 + val2;
+            
+            // On calcule le pourcentage pour chaque pilote (on évite la division par zéro si le total est 0)
+            const width1 = total > 0 ? (val1 / total) * 100 : 50;
+            const width2 = total > 0 ? (val2 / total) * 100 : 50;
+
+            html += `
+                <div class="stat-row">
+                    <div class="stat-value">${val1}</div>
+                    <div class="stat-label">${stat.label}</div>
+                    <div class="stat-value">${val2}</div>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar bar-p1" style="width: ${width1}%;"></div>
+                    <div class="progress-bar bar-p2" style="width: ${width2}%;"></div>
+                </div>
+            `;
+        });
+
+        resultsContainer.innerHTML = html;
+    }
+}
+
+
+
 });

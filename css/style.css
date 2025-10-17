@@ -768,3 +768,91 @@ input:checked + .slider:before {
 .carousel-3d-nav button:hover {
     background: #E10600;
 }
+
+
+/* ======================= PAGE COMPARATEUR ======================= */
+.selectors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.selectors select {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    background-color: #111;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+.vs-text {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 2rem;
+    color: #E10600;
+    font-weight: 700;
+}
+
+#comparison-results {
+    color: white;
+    text-align: center;
+}
+
+/* Style pour les résultats du comparateur */
+#comparison-results h2 {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.vs-text-small {
+    font-size: 1.5rem;
+    color: #E10600;
+    margin: 0 10px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.stat-label {
+    font-family: 'Roboto', sans-serif;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.stat-value {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.progress-bar-container {
+    display: flex;
+    height: 10px;
+    max-width: 600px;
+    margin: 10px auto 30px auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    transition: width 0.5s ease-in-out; /* Animation de la barre */
+}
+
+/* Couleurs pour les deux pilotes */
+.bar-p1 {
+    background-color: #3671C6; /* Bleu */
+}
+
+.bar-p2 {
+    background-color: #6CD3BF; /* Vert d'eau */
+}

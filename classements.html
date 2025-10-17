@@ -19,81 +19,51 @@
         </div>
     </nav>
 
+    <header class="hero-section">
+        <video id="hero-video" src="./videos/hero-background.mp4" autoplay loop muted playsinline></video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>F1 Data Hub</h1>
+            <p>L'expérience ultime pour le fan de Formule 1.</p>
+        </div>
+    </header>
+
     <main>
-        <div class="page-header">
-            <h1>Classements Officiels 2025</h1>
-        </div>
-        <div class="section-container">
-            <div class="standings-table-container">
-                <h2>Classement Pilotes</h2>
-                <table class="standings-table">
-                    <thead>
-                        <tr>
-                            <th>Pos</th>
-                            <th>Pilote</th>
-                            <th>Écurie</th>
-                            <th>PTS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="--team-color: #3671C6;">
-                            <td>1</td>
-                            <td>Max Verstappen</td>
-                            <td>Red Bull Racing</td>
-                            <td>575</td>
-                        </tr>
-                        <tr style="--team-color: #3671C6;">
-                            <td>2</td>
-                            <td>Sergio Pérez</td>
-                            <td>Red Bull Racing</td>
-                            <td>285</td>
-                        </tr>
-                        <tr style="--team-color: #6CD3BF;">
-                            <td>3</td>
-                            <td>Lewis Hamilton</td>
-                            <td>Mercedes-AMG Petronas</td>
-                            <td>234</td>
-                        </tr>
-                         <tr style="--team-color: #E10600;">
-                            <td>4</td>
-                            <td>Charles Leclerc</td>
-                            <td>Scuderia Ferrari</td>
-                            <td>206</td>
-                        </tr>
+    <div class="page-header">
+        <h1>Classements Officiels 2025</h1>
+    </div>
+    <div class="section-container">
+        <div class="standings-table-container">
+            <h2>Classement Pilotes</h2>
+            <table class="standings-table">
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Pilote</th>
+                        <th>Écurie</th>
+                        <th>PTS</th>
+                    </tr>
+                </thead>
+                <tbody id="driver-standings-body">
                     </tbody>
-                </table>
-            </div>
-            <div class="standings-table-container">
-                <h2>Classement Constructeurs</h2>
-                <table class="standings-table">
-                    <thead>
-                        <tr>
-                            <th>Pos</th>
-                            <th>Écurie</th>
-                            <th>PTS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="--team-color: #3671C6;">
-                            <td>1</td>
-                            <td>Red Bull Racing</td>
-                            <td>860</td>
-                        </tr>
-                        <tr style="--team-color: #6CD3BF;">
-                            <td>2</td>
-                            <td>Mercedes-AMG Petronas</td>
-                            <td>409</td>
-                        </tr>
-                        <tr style="--team-color: #E10600;">
-                            <td>3</td>
-                            <td>Scuderia Ferrari</td>
-                            <td>406</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            </table>
         </div>
-    </main>
+        <div class="standings-table-container">
+            <h2>Classement Constructeurs</h2>
+            <table class="standings-table">
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Écurie</th>
+                        <th>PTS</th>
+                    </tr>
+                </thead>
+                <tbody id="constructor-standings-body">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</main>
 
     <footer>
         <div class="footer-container">
@@ -109,6 +79,6 @@
         </div>
     </footer>
 
-    <script src="./js/script.js"></script>
+    <script src="./js/data.js"></script> <script src="./js/script.js"></script>
 </body>
 </html>

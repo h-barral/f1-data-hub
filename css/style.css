@@ -75,7 +75,7 @@ nav {
 }
 
 #hero-video {
-    position: absolute;
+    position: fixed; /* CHANGEMENT ICI */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -83,18 +83,18 @@ nav {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1;
+    z-index: -2; /* CHANGEMENT ICI */
     object-fit: cover;
 }
 
 .hero-overlay {
-    position: absolute;
+    position: fixed; /* CHANGEMENT ICI */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 0;
+    z-index: -1; /* CHANGEMENT ICI */
 }
 
 .hero-content {
@@ -145,7 +145,7 @@ nav {
 /* ======================= SECTIONS DE CONTENU ======================= */
 .next-race-section {
     padding: 80px 0;
-    background-color: #111;
+    background-color: transparent; /* CHANGEMENT ICI */
     color: white;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -210,7 +210,7 @@ nav {
 /* ======================= CLASSEMENTS ======================= */
 .standings-section {
     padding: 80px 0;
-    background-color: #0A0A0A;
+    background-color: transparent; /* CHANGEMENT ICI */
     color: white;
 }
 
@@ -269,7 +269,7 @@ nav {
 /* ======================= PILOTES ======================= */
 .drivers-section {
     padding: 80px 0;
-    background-color: #111;
+    background-color: transparent; /* CHANGEMENT ICI */
     color: white;
 }
 
@@ -604,4 +604,167 @@ footer {
 
 .standings-table td:last-child {
     font-weight: 700;
+}
+
+/* ======================= STYLE DE BLOC UNIFIÉ ======================= */
+
+/* --- Valeur de base pour le fond --- */
+:root {
+    --block-background: rgba(20, 20, 20, 0.85); /* Fond gris foncé, 85% opaque. Modifiez 0.85 pour ajuster la transparence. */
+}
+
+/* --- Page Classements & Accueil --- */
+.standings-table-container, .next-race-section .section-container {
+    background-color: var(--block-background);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Page Courses --- */
+.race-card {
+    background-color: var(--block-background); /* Applique le fond unifié */
+}
+
+/* --- Page Pilotes --- */
+.pilot-card {
+    background: var(--block-background); /* Applique le fond unifié */
+}
+
+/* --- Ajustement pour les tableaux sur la page d'accueil --- */
+.standings-section .standings-column {
+    background-color: var(--block-background);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* On retire l'ancien fond des sections pour éviter les doublons */
+.next-race-section,
+.standings-section,
+.drivers-section {
+    background-color: transparent;
+}
+
+
+
+
+/* ======================= SÉLECTEUR DE VUE (TOGGLE SWITCH) ======================= */
+.view-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    transition: .4s;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: #E10600;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #111;
+}
+
+input:checked + .slider:before {
+    transform: translateX(1.5em);
+}
+
+/* ======================= CARROUSEL 3D DES PILOTES ======================= */
+
+.pilots-grid {
+    display: grid; /* Assurez-vous que la grille est toujours là */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Scène principale pour la perspective 3D */
+.carousel-scene {
+    display: none; /* Caché par défaut */
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1500px; /* La magie de la 3D commence ici */
+}
+
+/* Le conteneur qui va tourner */
+.carousel-3d {
+    width: 300px; /* Largeur d'une carte */
+    height: 450px; /* Hauteur d'une carte */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+/* Chaque carte dans le carrousel */
+.carousel-3d-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Cache le dos de la carte quand elle tourne */
+}
+
+/* Navigation avec les flèches */
+.carousel-3d-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+}
+
+.carousel-3d-nav button {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-3d-nav button:hover {
+    background: #E10600;
 }
